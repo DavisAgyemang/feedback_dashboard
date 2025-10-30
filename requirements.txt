@@ -1,0 +1,5 @@
+pandas
+matplotlib
+feedback_mechanism @ git+https://github.com/DavisAgyemang/Universal_Feedback_tool.git@18008c7d02ae6a0748958ec9f6339bed43f5564c
+flask
+python-dotenv==1.1.1
