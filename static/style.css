@@ -1,0 +1,43 @@
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #a0aec0;
+            border-radius: 4px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background-color: #f7fafc;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        #loading-overlay {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 10;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- feature to allows for row to be clicked on to show detail --- */
+        .clickable-row {
+            cursor: pointer;
+        }
+
+        /* Detail row is hidden by default */
+        .detail-row {
+            display: none;
+            background-color: #f7fafc;
+        }
+        /* shows the table */
+        #data-table-body td {
+            white-space: normal;
+        }
