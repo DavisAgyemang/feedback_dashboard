@@ -41,13 +41,7 @@
         .clickable-row {
             cursor: pointer;
         }
-        /* Truncates text in the main table view */
-        .truncate-text {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            max-width: 250px;
-        }
+
         /* Detail row is hidden by default */
         .detail-row {
             display: none;
@@ -189,7 +183,11 @@
                 if (value === 'Up') return '👍 Up';
                 if (value === 'Down') return '👎 Down';
             }
-            // No truncation here, relying on CSS for main view
+            // truncate the text
+            if(typeof value == 'string' && value.length > 50){
+                return value.substring(0, 50) + '...';
+            }
+
             return value;
         }
 
@@ -232,7 +230,7 @@
 
                     // Add truncation class only to the long text fields
                     if (colKey === 'User_Query' || colKey === 'User_Feedback' || colKey === 'AI_Response') {
-                        cell.className += ' max-w-[300px] truncate-text';
+                        cell.className += ' max-w-[300px]';
                     }
 
                     cell.textContent = formatValue(colKey, item[colKey]);
